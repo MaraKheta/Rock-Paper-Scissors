@@ -134,7 +134,23 @@ function game2(){
 
     while (counter < 5){
         const [winners, playerSelection, computerSelection] = oneRoundGame()
+
+        if (winners == "you"){
+            console.log("You WIN! " +playerSelection+ " beats " +computerSelection+ "!")
+            score++
+        }else if (winners == "computer"){
+            console.log("You LOSE! " +computerSelection+ " beats " +playerSelection+ "!")
+        } else if (winners == "draw"){
+            console.log("Ahh, it's a DRAW!")
+        } else {
+            console.log("Looks like someone isn't interest...?!")
+        }
+
+        counter++;
+
     }
+
+    return score;
 }
 
 
@@ -171,3 +187,11 @@ function game2(){
 
 // ---------------------------- FIVE ROUND GAME 2 --------------------------------------
 
+let winner = "";
+let score = game2();
+
+if (score < 3){
+    console.log("You LOSE! You scored " +score+ " points.")
+} else {
+    console.log("You WIN! You scored " +score+ " points!")
+} 

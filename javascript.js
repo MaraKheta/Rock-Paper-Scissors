@@ -47,10 +47,13 @@ function getComputerChoice() {
     return CompChoise
 }
 
-function oneRoundGame(playerSelection,computerSelection) {
+function oneRoundGame() {
     let playerSelection = prompt("Choose your weapon!");
     let computerSelection = getComputerChoice()
     playerSelection = playerSelection.trim().toLowerCase()
+
+    console.log("You chose: " +playerSelection)
+    console.log("Computer chose: " +computerSelection)
 
     if (playerSelection == computerSelection){
         // console.log("Ahh, it's a DRAW!")
@@ -78,7 +81,7 @@ function oneRoundGame(playerSelection,computerSelection) {
         winner = ""
     }
 
-    return winner;
+    return  [winner,playerSelection,computerSelection];
 }
 
 
@@ -125,26 +128,27 @@ function game(playerSelection,computerSelection){
 }
 
 
-function game2(){}
+function game2(){
+    let counter = 0
+    let score = 0
+
+    while (counter < 5){
+        const [winners, playerSelection, computerSelection] = oneRoundGame()
+    }
+}
 
 
 // --------------------------- ONE ROUND GAME ----------------------------------
 
-// let playerSelection = prompt("Choose your weapon!");
-// let computerSelection = getComputerChoice()
 // let winner = ""
 
-// playerSelection = playerSelection.trim().toLowerCase()
+// const [winners, playerSelection, computerSelection] = oneRoundGame()
 
-// console.log("You chose: " +playerSelection)
-// console.log("Computer chose: " +computerSelection)
-
-// oneRoundGame(playerSelection,computerSelection)
-// if (winner == "you"){
+// if (winners == "you"){
 //     console.log("You WIN! " +playerSelection+ " beats " +computerSelection+ "!")
-// }else if (winner == "computer"){
+// }else if (winners == "computer"){
 //     console.log("You LOSE! " +computerSelection+ " beats " +playerSelection+ "!")
-// } else if (winner == "draw"){
+// } else if (winners == "draw"){
 //     console.log("Ahh, it's a DRAW!")
 // } else {
 //     console.log("Looks like someone isn't interest...?!")
@@ -154,13 +158,16 @@ function game2(){}
 // -------------------------- FIVE ROUND GAME ------------------------------------
 
 
-let playerSelection = ""
-let computerSelection = ""
-playerSelection = playerSelection.trim().toLowerCase()
-let score = game(playerSelection,computerSelection)
+// let playerSelection = ""
+// let computerSelection = ""
+// playerSelection = playerSelection.trim().toLowerCase()
+// let score = game(playerSelection,computerSelection)
 
-if (score < 3){
-    console.log("You lost. You only scored " +score+ " out of 5.")
-} else {
-    console.log("You win! You scored " +score+ " out of 5!")
-}
+// if (score < 3){
+//     console.log("You lost. You only scored " +score+ " out of 5.")
+// } else {
+//     console.log("You win! You scored " +score+ " out of 5!")
+// }
+
+// ---------------------------- FIVE ROUND GAME 2 --------------------------------------
+

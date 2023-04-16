@@ -81,7 +81,7 @@ function oneRoundGame() {
         winner = ""
     }
 
-    return  [winner,playerSelection,computerSelection];
+    return [winner,playerSelection,computerSelection];
 }
 
 

@@ -48,6 +48,10 @@ function getComputerChoice() {
 }
 
 function oneRoundGame(playerSelection,computerSelection) {
+    let playerSelection = prompt("Choose your weapon!");
+    let computerSelection = getComputerChoice()
+    playerSelection = playerSelection.trim().toLowerCase()
+
     if (playerSelection == computerSelection){
         // console.log("Ahh, it's a DRAW!")
         winner = "draw"
@@ -119,6 +123,9 @@ function game(playerSelection,computerSelection){
     return score
 
 }
+
+
+function game2(){}
 
 
 // --------------------------- ONE ROUND GAME ----------------------------------
